@@ -15,38 +15,32 @@ p5.prototype._frameRate = 0;
 p5.prototype._lastFrameTime = window.performance.now();
 p5.prototype._targetFrameRate = 60;
 
-const _windowPrint = window.print;
-
 /**
- * The <a href="#/p5/print">print()</a> function writes to the console area of
+ * The <a href="#/p5/print">println()</a> function writes to the console area of
  * your browser. This function is often helpful for looking at the data a program
  * is producing. This function creates a new line of text for each call to
  * the function. Individual elements can be separated with quotes ("") and joined
  * with the addition operator (+).
  *
- * Note that calling print() without any arguments invokes the window.print()
+ * Note that calling print() invokes the window.print()
  * function which opens the browser's print dialog. To print a blank line
- * to console you can write print('\n').
+ * to console you can write println('\n').
  *
- * @method print
+ * @method println
  * @param {Any} contents any combination of Number, String, Object, Boolean,
  *                       Array to print
  * @example
  * <div><code class='norender'>
  * let x = 10;
- * print('The value of x is ' + x);
+ * println('The value of x is ' + x);
  * // prints "The value of x is 10"
  * </code></div>
  *
  * @alt
  * default grey canvas
  */
-p5.prototype.print = function(...args) {
-  if (!args.length) {
-    _windowPrint();
-  } else {
-    console.log(...args);
-  }
+p5.prototype.println = function(...args) {
+  console.log(...args);
 };
 
 /**
