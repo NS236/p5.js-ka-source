@@ -4,16 +4,16 @@
 // requestanimationframe-for-smart-er-animating
 // requestAnimationFrame polyfill by Erik Möller
 // fixes from Paul Irish and Tino Zijdel
-// window.requestAnimationFrame = (() =>
-//   window.requestAnimationFrame ||
-//   window.webkitRequestAnimationFrame ||
-//   window.mozRequestAnimationFrame ||
-//   window.oRequestAnimationFrame ||
-//   window.msRequestAnimationFrame ||
-//   ((callback, element) => {
-//     // should '60' here be framerate?
-//     window.setTimeout(callback, 1000 / 60);
-//   }))();
+window.requestAnimFrame = (() =>
+  window.requestAnimationFrame ||
+  window.webkitRequestAnimationFrame ||
+  window.mozRequestAnimationFrame ||
+  window.oRequestAnimationFrame ||
+  window.msRequestAnimationFrame ||
+  ((callback, element) => {
+    // should '60' here be framerate?
+    window.setTimeout(callback, 1000 / 60);
+  }))();
 
 /**
  * shim for Uint8ClampedArray.slice
